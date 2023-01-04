@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Select the type of ML Algo</h1>
+	<form action="{{ url_for('MLType')}}"method="post">
+    <form name="myForm" action="" method="post" onsubmit="">
+	<p>
+	<input type="radio" name="options" id="lnn" value="lnn" > Linear Regression </input><br>
+	<input type="radio" name="options" id="lasso" value="lasso"> Lasso Regression </input><br>
+	<input type="radio" name="options" id="rdf" value="rdf"> Random Forest Regressor </input><br>
+	<input type="radio" name="options" id="knn" value="knn"> KNN Regressor </input><br>
+
+	</p>
+	
+	
+	</form>
+</form>
+<p>
+	    <form action="index.html" method="POST">
+		<input type=submit value=Next>	
+		</form>
+	</p>
+   <br>
+   <br>
+
+ </div>
+
+
+</body>
+</html>

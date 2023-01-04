@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Used Car Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Used Car Prediction</h1>
+	
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('user_data_transform_for_prediction')}}"method="POST">
+	
+	<span class="input-group-addon">Make of Car</span>
+
+        <select name="car_make" class="selectpicker form-control" >
+          {% for o in car_make_data %}
+          <option value="{{ o }}">{{ o }}</option>
+          {% endfor %}
+        </select>
+	
+	<span class="input-group-addon">Number of Seats</span>
+        <select name="seats" class="selectpicker form-control" >
+          {% for o in seats_data %}
+          <option value="{{ o }}">{{ o}}</option>
+          {% endfor %}
+        </select>
+		
+		<span class="input-group-addon">Manufacture Year</span>
+        <select name="year" class="selectpicker form-control" >
+          {% for o in year_data %}
+          <option value="{{ o }}">{{ o }}</option>
+          {% endfor %}
+        </select>
+
+<span class="input-group-addon">Ownership</span>
+        <select name="ownership" class="selectpicker form-control" >
+          {% for o in ownership_data %}
+          <option value="{{ o }}">{{ o }}</option>
+          {% endfor %}
+        </select>
+
+<span class="input-group-addon">Transmission</span>
+        <select name="transmission" class="selectpicker form-control" >
+          {% for o in transmission_data %}
+          <option value="{{ o }}">{{ o }}</option>
+          {% endfor %}
+        </select>
+		
+<span class="input-group-addon">Fuel type</span>
+        <select name="fuel_type" class="selectpicker form-control" >
+          {% for o in fuel_type_data %}
+          <option value="{{ o }}">{{ o }}</option>
+          {% endfor %}
+      </select>		
+	<input type="text" name="Engine (cc)" placeholder="Engine (cc)" required="required" />
+	<input type="text" name="Km driven" placeholder="Km driven" required="required" />
+ <br>
+ <br>
+        <button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="Predict_RF">Predict-Random Forest Algo</button>
+		<button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="Predict_KNN">Predict-KNN Algo</button>
+        <button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="Predict_LR">Predict-Linear Regression Algo</button>
+        <button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="Predict_Lasso">Predict-Lasso Regression Algo</button>
+
+
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
