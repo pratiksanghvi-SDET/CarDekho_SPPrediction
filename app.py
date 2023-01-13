@@ -52,16 +52,16 @@ def usedCarPredictionRenderTemplate():
 
 
 # Loading Pickle files-----------------------------------------------------
-pickle_in = open("D:\\Learn\\CarDekho_SPPrediction\\rf_regressor.pkl", "rb")
+pickle_in = open("rf_regressor.pkl", "rb")
 rf_regressor = pickle.load(pickle_in)
 
-pickle_in_knn = open("D:\\Learn\\CarDekho_SPPrediction\\knn_regressor.pkl", "rb")
+pickle_in_knn = open("knn_regressor.pkl", "rb")
 knn_regressor = pickle.load(pickle_in_knn)
 
-pickle_in_lasso = open("D:\\Learn\\CarDekho_SPPrediction\\lasso_regressor.pkl", "rb")
+pickle_in_lasso = open("lasso_regressor.pkl", "rb")
 lasso_regressor = pickle.load(pickle_in_lasso)
 
-pickle_in_linear = open("D:\\Learn\\CarDekho_SPPrediction\\lr_regressor.pkl", "rb")
+pickle_in_linear = open("lr_regressor.pkl", "rb")
 linear_regressor = pickle.load(pickle_in_linear)
 
 
