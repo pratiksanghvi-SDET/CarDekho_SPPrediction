@@ -12,18 +12,28 @@ import bisect
 
 app = Flask(__name__)
 
-usedcar = pd.read_csv("D:\\Learn\\CarDekho_SPPrediction\\used_car_price_cleaned.csv")
+#usedcar = pd.read_csv("D:\\Learn\\CarDekho_SPPrediction\\used_car_price_cleaned.csv")
 
-global_make_data_html = usedcar['Make'].unique()
-global_seats_data_html = usedcar['Seats'].unique()
-global_year_data_html = usedcar['manufacture'].unique()
-min_global_enginecc_number_html = min(usedcar['engine_in_cc'])
-max_global_enginecc_number_html = max(usedcar['engine_in_cc'])
-global_ownership_data_html = usedcar['ownership'].unique()
-global_transmission_data_html = usedcar['transmission'].unique()
-global_fuelType_data_html = usedcar['fuel_type'].unique()
-min_global_kmdriven_number_html = min(usedcar['kms_driven'])
-max_global_kmdriven_number_html = max(usedcar['kms_driven'])
+
+
+global_make_data_html = ['Jeep', 'Renault', 'Toyota', 'Honda', 'Volkswagen', 'Maruti',
+       'Mahindra', 'Hyundai', 'Nissan', 'Kia', 'MG', 'Tata', 'BMW',
+       'Mercedes-Benz', 'Datsun', 'Volvo', 'Audi', 'Porsche', 'Ford',
+       'Chevrolet', 'Skoda', 'Lexus', 'Land', 'Mini', 'Jaguar',
+       'Mitsubishi', 'Force', 'Premier', 'Fiat', 'Maserati', 'Bentley',
+       'Isuzu']
+
+global_seats_data_html = ['5 Seats', '6 Seats', '7 Seats', '4 Seats', '8 Seats', '2 Seats']
+global_year_data_html = [2017, 2021, 2016, 2018, 2015, 2014, 2020, 2019, 2012, 2008, 2013,
+                        2022, 2010, 2005, 2009, 2006, 2011, 2007, 2002, 2004, 1998, 2003,
+                        1995, 2000, 2001, 1999]
+min_global_enginecc_number_html = 0
+max_global_enginecc_number_html = 9999
+global_ownership_data_html = ['1st Owner', '2nd Owner', '3rd Owner', '4th Owner', '5th Owner','0th Owner']
+global_transmission_data_html = ['Manual', 'Automatic']
+global_fuelType_data_html = ['Diesel', 'Petrol', 'Cng', 'Electric', 'Lpg']
+min_global_kmdriven_number_html = 0
+max_global_kmdriven_number_html = 99000000
 
 
 # -----------------------------------------------------------------------------------
