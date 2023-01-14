@@ -41,7 +41,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import confusion_matrix, classification_report
 #==================================================================================================
-app = Flask(__name__)
+sentimentapp = Flask(__name__)
 
 # -----------------------------------------------------------------------------------
 
@@ -138,14 +138,14 @@ def preprocess(textdata):
 
 
 
-@app.route('/', methods=["GET", "POST"])
+@sentimentapp.route('/', methods=["GET", "POST"])
 def sentimentAnalysis():
     if request.method == "POST":
         sentimentAnalysisRenderTemplate()
 
     return render_template("sentiment_analysis.html")
 
-@app.route('/predictSentiment', methods=["GET", "POST"])
+@sentimentapp.route('/predictSentiment', methods=["GET", "POST"])
 def sentimentAnalysisRenderTemplate():
     features = []
     textData = []
@@ -189,4 +189,4 @@ def sentimentAnalysisRenderTemplate():
 
 if __name__ == '__main__':
     # app.run(host='192.168.1.100', port=8000, debug=True)# - run on local machine
-    app.run(debug=True, use_reloader=False)
+    sentimentapp.run(debug=True, use_reloader=False)
