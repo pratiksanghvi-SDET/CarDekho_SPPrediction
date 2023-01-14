@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Sentiment Analyis Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Sentiment Analyis Prediction</h1>
+	
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('sentimentAnalysisRenderTemplate')}}"method="POST">
+		
+	<input type="text" name="tweet" placeholder="tweet" required="required" />
+ <br>
+ <br>
+		<button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="SVC">Predict-Linear SVC </button>
+        <button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="LR">Predict-Logistic Regression</button>
+        <button class="btn btn-primary btn-block btn-large" type ="submit" name="action" value="BNB">Predict-Bernoulli Naive Bayes</button>
+
+
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+    <br>
+   <br>
+     <br>
+   <br>
+     <br>
+   <br>
+	Upcoming - Predict button based on Neural Network Prediction using Tensorflow/Deep Learning
+ </div>
+
+
+</body>
+</html>
